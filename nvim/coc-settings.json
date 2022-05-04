@@ -1,0 +1,31 @@
+{
+        "languageserver": {
+                "go": {
+                        "command": "gopls",
+                        "rootPatterns": [
+                                "go.mod"
+                        ],
+                        "trace.server": "verbose",
+                        "filetypes": [
+                                "go"
+                        ]
+                }
+        },
+        "coc.preferences.formatOnSaveFiletypes": [
+                "go",
+                "python",
+                "json"
+        ],
+        "go.goplsOptions": {
+                "completeUnimported": true
+        },
+        "python.formatting.provider": "black",
+        "python.formatting.blackPath": "~/.local/bin/black",
+        "python.formatting.blackdPath": "~/.local/bin/blackd",
+        "pyright.organizeimports.provider": "isort",
+        "python.sortImports.path": "~/.local/bin/isort",
+        "python.sortImports.args": [
+                "--sp",
+                "/home/bcmmbaga/setup.cfg"
+        ]
+}
