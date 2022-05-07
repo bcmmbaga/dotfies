@@ -9,6 +9,13 @@
                         "filetypes": [
                                 "go"
                         ]
+                },
+                "golangci-lint-languageserver": {
+                        "command": "golangci-lint-langserver",
+                        "filetypes": ["go"],
+                        "initializationOptions": {
+                          "command": ["golangci-lint", "run", "--out-format", "json"]
+                        }
                 }
         },
         "coc.preferences.formatOnSaveFiletypes": [
