@@ -2,10 +2,13 @@
 
 local map = vim.api.nvim_set_keymap
 
--- Toggle nvim-tree
-map('n', 'n', ':NvimTreeToggle<CR>', {})
-map('n', 'ff', [[:Telescope find_files]], {})
+map('n', 'n', [[:NERDTreeToggle<CR>]], {})                                          -- Toggle NERDTREE
+map('n', 'ff', [[:Telescope find_files<CR>]], {})                                   -- find files 
 
+map('n', 'nt', [[:BufferLineCycleNext<CR>]], {})
+map('n', 'pt', [[ :BufferLineCyclePrev<CR> ]], {})
+
+map('n', '<C-p>', [[ :Glow<CR> ]], {})
 
 -- coc key bindings
 map('n', 'gd', '<Plug>(coc-definition)', {silent=true})                              -- go to definition

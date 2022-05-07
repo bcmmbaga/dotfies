@@ -3,13 +3,8 @@
 local opt = vim.opt
 local cmd = vim.api.nvim_command
 
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
-vim.api.nvim_exec([[ autocmd CursorHold * silent call CocActionAsync('highlight') ]], false)
-vim.api.nvim_exec([[ autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'Pipfile'] ]], false)
-
 
 -- [[ Context ]]
-opt.colorcolumn = '80'           -- Show col for max line length
 opt.number = true                -- Show line numbers
 opt.relativenumber = false       -- Show relative line numbers
 opt.scrolloff = 4                -- Min num lines of context  
@@ -23,7 +18,8 @@ opt.fileencoding = 'utf8'        -- File encoding to use
 -- [[ Theme ]]
 opt.syntax = "ON"                -- Allow syntax highlighting
 opt.termguicolors = true         -- If term supports ui color then enable
-cmd('colorscheme gruvbox')
+opt.guifont = "DroidSans 11"
+cmd('colorscheme gruvbox-material')
 
 -- [[ Search ]]
 opt.ignorecase = true            -- Ignore case in search patterns
