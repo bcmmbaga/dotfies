@@ -1,52 +1,70 @@
 -- [[ plugins.lua ]]
 
-return require('packer').startup({function(use)
+return require("packer").startup({
+	function(use)
+		use("wbthomason/packer.nvim") -- Package manager
 
-  -- file-explorer with icons
-  use {     
-    'preservim/nerdtree',
-  }
-  use {
-    'ryanoasis/vim-devicons'
-  }
-  
-  -- gruvbox theme
-  use { 'sainnhe/gruvbox-material' }
+		use("neovim/nvim-lspconfig") -- Configurations for Nvim LSP
 
-  -- status line
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+		-- file explorer
+		use({
+			"kyazdani42/nvim-tree.lua",
+			requires = {
+				"kyazdani42/nvim-web-devicons", -- optional, for file icons
+			},
+		})
 
-  -- fuzzy finder
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  
-  -- git intergration
-  use { 'tpope/vim-fugitive' }
+		-- tabs
+		use({
+			"romgrk/barbar.nvim",
+			requires = { "kyazdani42/nvim-web-devicons" },
+		})
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+		-- Completion
+		use("hrsh7th/nvim-cmp")
+		use("hrsh7th/cmp-buffer")
+		use("hrsh7th/cmp-path")
+		use("hrsh7th/cmp-nvim-lsp")
+		use("hrsh7th/cmp-nvim-lsp-signature-help")
+		use("hrsh7th/cmp-nvim-lua")
+		use("SirVer/ultisnips")
+		use("quangnguyen30192/cmp-nvim-ultisnips")
 
-  -- conquer of completion
-  use {'neoclide/coc.nvim', branch = 'release'}
+		use("steelsojka/pears.nvim")
 
-  -- vim-go additional go features
-  use { "fatih/vim-go" }
+		-- gruvbox theme
+		use({ "sainnhe/gruvbox-material" })
 
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+		-- status line
+		use({
+			"nvim-lualine/lualine.nvim",
+			requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		})
 
-  use { 'ggandor/lightspeed.nvim' }
+		--   -- fuzzy finder
+		use({
+			"nvim-telescope/telescope.nvim",
+			requires = { { "nvim-lua/plenary.nvim" } },
+		})
 
-  use { 'RRethy/vim-illuminate' }
+		-- git intergration
+		use({ "tpope/vim-fugitive" })
+		use("lewis6991/gitsigns.nvim")
 
-  use {"ellisonleao/glow.nvim", branch = 'main'}
-  end,
-  config = {
-    package_root = vim.fn.stdpath('config') .. '/site/pack'
-  }})
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate",
+		})
+		use("jose-elias-alvarez/null-ls.nvim")
+		-- conquer of completion
+		-- use {'neoclide/coc.nvim', branch = 'release'}
+
+		-- -- vim-go
+		use({ "fatih/vim-go" })
+
+		use({ "ggandor/lightspeed.nvim" })
+	end,
+	config = {
+		package_root = vim.fn.stdpath("config") .. "/site/pack",
+	},
+})

@@ -1,38 +1,45 @@
 {
-        "languageserver": {
-                "go": {
-                        "command": "gopls",
-                        "rootPatterns": [
-                                "go.mod"
-                        ],
-                        "trace.server": "verbose",
-                        "filetypes": [
-                                "go"
-                        ]
-                },
-                "golangci-lint-languageserver": {
-                        "command": "golangci-lint-langserver",
-                        "filetypes": ["go"],
-                        "initializationOptions": {
-                          "command": ["golangci-lint", "run", "--out-format", "json"]
-                        }
-                }
+    "languageserver": {
+        "go": {
+            "command": "gopls",
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "trace.server": "verbose",
+            "filetypes": [
+                "go"
+            ]
         },
-        "coc.preferences.formatOnSaveFiletypes": [
-                "go",
-                "python",
-                "json"
-        ],
-        "go.goplsOptions": {
-                "completeUnimported": true
-        },
-        "python.formatting.provider": "black",
-        "python.formatting.blackPath": "~/.local/bin/black",
-        "python.formatting.blackdPath": "~/.local/bin/blackd",
-        "pyright.organizeimports.provider": "isort",
-        "python.sortImports.path": "~/.local/bin/isort",
-        "python.sortImports.args": [
-                "--sp",
-                "/home/bcmmbaga/setup.cfg"
-        ]
+        "golangci-lint-languageserver": {
+            "command": "golangci-lint-langserver",
+            "filetypes": [
+                "go"
+            ],
+            "initializationOptions": {
+                "command": [
+                    "golangci-lint",
+                    "run",
+                    "--out-format",
+                    "json"
+                ]
+            }
+        }
+    },
+    "coc.preferences.formatOnSaveFiletypes": [
+        "go",
+        "python",
+        "json"
+    ],
+    "go.goplsOptions": {
+        "completeUnimported": true
+    },
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/opt/homebrew/bin/black",
+    "python.formatting.blackdPath": "/opt/homebrew/bin/blackd",
+    "pyright.organizeimports.provider": "isort",
+    "python.sortImports.path": "/opt/homebrew/bin/isort",
+    "python.sortImports.args": [
+        "--sp",
+        "/Users/bcmmbaga/setup.cfg"
+    ]
 }
